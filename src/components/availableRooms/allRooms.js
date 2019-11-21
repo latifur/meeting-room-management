@@ -11,8 +11,11 @@ function AllRooms() {
         <Room
           img={item.image[0].url}
           title={item.name}
-          slug={item.slug}
+          itemSlug={item.slug}
           sortDescription={item.description}
+          availability={item.booked}
+          capacity={item.capacity}
+          branch={item.office}
         />
       </Col>
     );

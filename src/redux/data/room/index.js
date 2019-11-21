@@ -1,4 +1,4 @@
-import Image1 from "./images/meeting-room.jpg";
+import Image1 from "./images/meeting-room.png";
 export const AllMeetingRooms = [
   {
     id: "1",
@@ -13,7 +13,23 @@ export const AllMeetingRooms = [
     type: "meeting",
     description:
       "This meeting room for client meeting. Have facilities with internet connection wired/wireless, Projector and AC",
-    booked: false,
+    booked: true,
+    bookedByUser: [
+      {
+        bookingId: 1,
+        userId: 15,
+        startTime: "10.30",
+        endTime: "11.20",
+        date: "2019-11-21"
+      },
+      {
+        bookingId: 2,
+        userId: 2,
+        startTime: "10.30",
+        endTime: "11.20",
+        date: "2019-11-22"
+      }
+    ],
     image: [{ url: Image1 }]
   },
   {
@@ -30,6 +46,22 @@ export const AllMeetingRooms = [
     description:
       "This meeting room for client meeting. Have facilities with internet connection wired/wireless, 42 inch Monitor and AC",
     booked: false,
+    bookedByUser: [
+      {
+        bookingId: 1,
+        userId: 15,
+        startTime: "10.30",
+        endTime: "11.20",
+        date: "2019-11-21"
+      },
+      {
+        bookingId: 2,
+        userId: 2,
+        startTime: "10.30",
+        endTime: "11.20",
+        date: "2019-11-22"
+      }
+    ],
     image: [{ url: Image1 }]
   },
   {
@@ -45,7 +77,23 @@ export const AllMeetingRooms = [
     type: "meeting",
     description:
       "This meeting room for client meeting. Have facilities with internet connection wired/wireless, 42 inch Monitor and AC",
-    booked: false,
+    booked: true,
+    bookedByUser: [
+      {
+        bookingId: 1,
+        userId: 15,
+        startTime: "10.30",
+        endTime: "11.20",
+        date: "2019-11-21"
+      },
+      {
+        bookingId: 2,
+        userId: 2,
+        startTime: "10.30",
+        endTime: "11.20",
+        date: "2019-11-22"
+      }
+    ],
     image: [{ url: Image1 }]
   },
   {
@@ -61,7 +109,23 @@ export const AllMeetingRooms = [
     type: "small-meeting",
     description:
       "This meeting room for small meeting. Have facilities with internet connection wired/wireless, 42 inch Monitor and AC",
-    booked: false,
+    booked: true,
+    bookedByUser: [
+      {
+        bookingId: 1,
+        userId: 15,
+        startTime: "10.30",
+        endTime: "11.20",
+        date: "2019-11-21"
+      },
+      {
+        bookingId: 2,
+        userId: 2,
+        startTime: "10.30",
+        endTime: "11.20",
+        date: "2019-11-22"
+      }
+    ],
     image: [{ url: Image1 }]
   },
   {
@@ -78,6 +142,22 @@ export const AllMeetingRooms = [
     description:
       "This meeting room for big meeting. Have facilities with internet connection wired/wireless, 42 inch Monitor and AC",
     booked: false,
+    bookedByUser: [
+      {
+        bookingId: 1,
+        userId: 15,
+        startTime: "10.30",
+        endTime: "11.20",
+        date: "2019-11-21"
+      },
+      {
+        bookingId: 2,
+        userId: 2,
+        startTime: "10.30",
+        endTime: "11.20",
+        date: "2019-11-22"
+      }
+    ],
     image: [{ url: Image1 }]
   },
   {
@@ -94,6 +174,22 @@ export const AllMeetingRooms = [
     description:
       "This meeting room for small meeting. Have facilities with internet connection wired/wireless, 42 inch Monitor and AC",
     booked: false,
+    bookedByUser: [
+      {
+        bookingId: 1,
+        userId: 15,
+        startTime: "10.30",
+        endTime: "11.20",
+        date: "2019-11-21"
+      },
+      {
+        bookingId: 2,
+        userId: 2,
+        startTime: "10.30",
+        endTime: "11.20",
+        date: "2019-11-22"
+      }
+    ],
     image: [{ url: Image1 }]
   },
   {
@@ -110,6 +206,22 @@ export const AllMeetingRooms = [
     description:
       "This meeting room for small meeting. Have facilities with internet connection wired/wireless, 42 inch Monitor and AC",
     booked: false,
+    bookedByUser: [
+      {
+        bookingId: 1,
+        userId: 15,
+        startTime: "10.30",
+        endTime: "11.20",
+        date: "2019-11-21"
+      },
+      {
+        bookingId: 2,
+        userId: 2,
+        startTime: "10.30",
+        endTime: "11.20",
+        date: "2019-11-22"
+      }
+    ],
     image: [{ url: Image1 }]
   }
 ];

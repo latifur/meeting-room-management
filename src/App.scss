@@ -1,5 +1,21 @@
 $primary-color: #557dbf;
 @import "./style/2_mixin.scss";
+
+h1,
+h2,
+h3,
+h4,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+a {
+  color: $primary-color;
+}
 .btn-primary {
   color: #fff;
   background-color: $primary-color;
@@ -31,5 +47,36 @@ $primary-color: #557dbf;
     .nav-link {
       color: #fff;
     }
+  }
+}
+.shadow-1,
+.alert,
+table {
+  @include material-shadow(1, 1);
+}
+.card span.badge.badge-info {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  white-space: pre-wrap;
+  width: 50px;
+  font-size: 9px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0;
+  opacity: 0.5;
+  animation-name: badge;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes badge {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
   }
 }

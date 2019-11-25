@@ -3,6 +3,8 @@ import { Redirect } from "react-router-dom";
 import { Row, Col, Form } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { BOOK_REQUEST } from "../../redux/action/userActions";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 function BookRequest(props) {
   const [bookTime, setBookTime] = useState({
@@ -10,6 +12,11 @@ function BookRequest(props) {
     starts: "",
     ends: "",
     isUpdated: false
+  });
+  const [startDate, setStartDate] = useState({
+    date: new Date(),
+    startTime: new Date(),
+    endTime: new Date()
   });
   const CurrentUserId = useSelector(state => state.user.currentUserId);
   const dispatch = useDispatch();
@@ -24,11 +31,46 @@ function BookRequest(props) {
         bookTime.date
       )
     );
+    setBookTime({ isUpdated: true });
+  }
+  function handleDate(today) {
+    setStartDate({
+      date: today,
+      startTime: startDate.startTime,
+      endTime: startDate.endTime
+    });
+    const date =
+      today.getFullYear() +
+      "-" +
+      (today.getMonth() + 1) +
+      "-" +
+      today.getDate();
+    setBookTime({ date: date, starts: bookTime.starts, ends: bookTime.ends });
+  }
+  function handleStartTime(today) {
+    setStartDate({
+      date: startDate.date,
+      startTime: today,
+      endTime: startDate.endTime
+    });
+    const date = today.getHours() + ":" + today.getMinutes();
+    setBookTime({
+      date: bookTime.date,
+      starts: date,
+      ends: bookTime.ends
+    });
+  }
+  function handleEndTime(today) {
+    setStartDate({
+      date: startDate.date,
+      startTime: startDate.startTime,
+      endTime: today
+    });
+    const date = today.getHours() + ":" + today.getMinutes();
     setBookTime({
       date: bookTime.date,
       starts: bookTime.starts,
-      ends: bookTime.ends,
-      isUpdated: true
+      ends: date
     });
   }
   return bookTime.isUpdated ? (
@@ -39,49 +81,44 @@ function BookRequest(props) {
         <Col md={4} lg={4}>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Date</Form.Label>
-            <Form.Control
-              type="date"
-              placeholder="date"
-              onChange={e =>
-                setBookTime({
-                  date: e.target.value,
-                  starts: bookTime.starts,
-                  ends: bookTime.ends,
-                  isUpdated: bookTime.isUpdated
-                })
-              }
+
+            <DatePicker
+              selected={startDate.date}
+              dateFormat="yyyy/MM/dd"
+              onChange={day => handleDate(day)}
+              className="form-control"
             />
           </Form.Group>
         </Col>
         <Col md={4} lg={3}>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Start Time</Form.Label>
-            <Form.Control
-              placeholder="Hour"
-              onChange={e =>
-                setBookTime({
-                  date: bookTime.date,
-                  starts: e.target.value,
-                  ends: bookTime.ends,
-                  isUpdated: bookTime.isUpdated
-                })
-              }
+
+            <DatePicker
+              selected={startDate.startTime}
+              onChange={date => handleStartTime(date)}
+              showTimeSelect
+              showTimeSelectOnly
+              timeIntervals={15}
+              timeCaption="Time"
+              dateFormat="h:mm aa"
+              className="form-control"
             />
           </Form.Group>
         </Col>
         <Col md={4} lg={3}>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>End Time</Form.Label>
-            <Form.Control
-              placeholder="Hour"
-              onChange={e =>
-                setBookTime({
-                  date: bookTime.date,
-                  starts: bookTime.starts,
-                  ends: e.target.value,
-                  isUpdated: bookTime.isUpdated
-                })
-              }
+
+            <DatePicker
+              selected={startDate.endTime}
+              onChange={date => handleEndTime(date)}
+              showTimeSelect
+              showTimeSelectOnly
+              timeIntervals={15}
+              timeCaption="Time"
+              dateFormat="h:mm aa"
+              className="form-control"
             />
           </Form.Group>
         </Col>

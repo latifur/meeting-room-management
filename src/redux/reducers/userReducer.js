@@ -24,7 +24,9 @@ export const userReducer = (state = initialState, action) => {
       const currentUser = state.users.find(
         res => res.id === state.currentUserId
       );
-      state.bookedByUser = currentUser.bookedRoom;
+      if (state.bookedByUser.length == 0) {
+        state.bookedByUser = currentUser.bookedRoom;
+      }
       return state;
     }
   }

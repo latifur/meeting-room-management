@@ -34,7 +34,7 @@ a {
   .btn {
     @include material-shadow(2, 1);
   }
-  &:hover {
+  &:not(.shadow-1):hover {
     transform: translateY(-5px);
     @include material-shadow(5);
   }

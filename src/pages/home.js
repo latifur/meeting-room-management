@@ -8,10 +8,10 @@ function Home() {
     <>
       <Container className="py-5">
         <Row>
-          <Col md="9">
+          <Col md="9" className="order-2 order-md-1">
             <AvailableRooms />
           </Col>
-          <Col md="3">
+          <Col md="3" className="order-1 order-md-2">
             <MyBookings />
           </Col>
         </Row>

@@ -6,3 +6,12 @@ export const SINGLE_ROOM = slug => {
     }
   };
 };
+
+export const SelectCapacity = capacity => {
+  return {
+    type: "SELECT_CAPACITY",
+    payload: {
+      capacity: capacity
+    }
+  };
+};

@@ -5,7 +5,7 @@ import Room from "./room";
 
 function AllRooms() {
   const Rooms = useSelector(state => state.room);
-  const ShowRooms = Rooms.AllRoomInfo.map((item, index) => {
+  const ShowRooms = Rooms.filteredRoom.map((item, index) => {
     return (
       <Col className="mb-3" md={4} key={index}>
         <Room

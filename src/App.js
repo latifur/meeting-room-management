@@ -11,7 +11,6 @@ class App extends React.Component {
     return (
       <>
         <AppNavbar />
-
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/details/:slug" exact component={SingleRoom} />
